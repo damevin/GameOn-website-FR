@@ -477,6 +477,7 @@ input[data-error]::after {
 #firstErrorMsg {
   color: red;
   font-size: 0.6em;
+  display: none;
 }
 footer {
   padding-left: 2vw;

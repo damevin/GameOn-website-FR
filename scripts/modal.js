@@ -1,38 +1,89 @@
-
-
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modal = document.getElementById('modal');
+const $registrationForm = document.querySelector('.registration-form');
 
+
+// Functions
+//  -> dédié à l'affichage
 // Fonction pour ouvrir et fermer la modal
+// Nommage fonctions :
+//  -> toggleModal
+//  -> displayModal
+//  -> hideModal
 function modalDisplay(displayStyle) {
   modal.style.display = displayStyle 
 }
 
-// Fonction pour que lorsque l'utilisateur clique sur le 
-// background la modal se ferme
+//  -> dédié aux vérifications
+function checkFirstName() {
+  const firstNameInput = document.getElementById('first').value;
+  const $firstErrorMsg = document.querySelector("#firstErrorMsg");
+  const isFirstNameValid = firstNameInput.length < 2
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-     modal.style.display = 'none';
-   }
- }
+  if (isFirstNameValid) {
+    $firstErrorMsg.style.display = "block";
+  } else {
+    $firstErrorMsg.style.display = "none";
+  }
 
-// Alerte lorsque l'utilisateur envoie les informations
-function validate() {
-  let errorFund = this.getErrors()
-  if(errorFund) {
-    return false
-  }
-  else {
-    alert('Merci ! Votre réservation a été reçue.')
-    return true
-  }
+  return isFirstNameValid
 }
 
-// Fonction pour les champs de la modal
+function isFormValid() {
+  return checkFirstName()
+}
+
+
+// Event Listeners
+$registrationForm.addEventListener('submit', function(event) {
+  event.preventDefault()
+
+  if (isFormValid()) {
+    console.log("=====")
+    console.log("tu peux passer à l'étape d'après")
+    console.log("=====")
+  } else {
+    console.log("=====")
+    console.log("C'est pété, il y a un truc pas clair dans le formulaire")
+    console.log("=====")
+  }
+
+})
+
+/**
+ * querySelector -> ça retourne un élément de type noeud
+ * querySelectorAll -> ça retourne un tableau (de noeuds ?)
+ */
+
+
+// À l'événement submit, déclenche la fonction à sa droite
+
+
+// // Fonction pour que lorsque l'utilisateur clique sur le 
+// // background la modal se ferme
+
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//      modal.style.display = 'none';
+//    }
+//  }
+
+// // Alerte lorsque l'utilisateur envoie les informations
+// function validate() {
+//   let errorFund = this.getErrors()
+//   if(errorFund) {
+//     return false
+//   }
+//   else {
+//     alert('Merci ! Votre réservation a été reçue.')
+//     return true
+//   }
+// }
+
+// // Fonction pour les champs de la modal
 
 function getErrors() {
   let errorFund = false;

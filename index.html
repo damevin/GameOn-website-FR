@@ -61,7 +61,7 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              class="registration-form"
             >
               <div
                 class="formData">
@@ -72,7 +72,8 @@
                   id="first"
                   name="first"
                 /><br>
-                <span id="firstErrorMsg"></span>
+                <!-- Plutôt des class que des id -->
+                <span id="firstErrorMsg">Veuillez entrer 2 caractères ou plus pour le champ du prénom</span>
               </div>
               <div
                 class="formData">
