@@ -17,8 +17,8 @@ function modalDisplay(displayStyle) {
 //  -> dédié aux vérifications
 function checkFirstName() {
   const firstNameInput = document.getElementById('first').value;
-  const $firstErrorMsg = document.querySelector("#firstErrorMsg");
-  const isFirstNameValid = firstNameInput.length < 2;
+  const $firstErrorMsg = document.querySelector(".firstErrorMsg");
+  const isFirstNameValid = firstNameInput.length > 2;
 
   if (isFirstNameValid) {
     $firstErrorMsg.style.display = "block";
@@ -31,7 +31,7 @@ function checkFirstName() {
 function checkLastName() {
   const lastNameInput = document.getElementById('last').value;
   const $lastErrorMsg = document.querySelector('#lastErrorMsg');
-  const isLastNameValid = lastNameInput.length < 2;
+  const isLastNameValid = lastNameInput.length > 2;
 
   if (isLastNameValid) {
     $lastErrorMsg.style.display = "block";
@@ -43,28 +43,21 @@ function checkLastName() {
 
 function checkEmail() {
   const emailInput = document.getElementById('email').value;
-  const emailFormat = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;";
-  const $emailErrorMsg = document.querySelector('#emailErrorMsg');
-  let isEmailValid = true;
-  console.log(emailFormat);
+  const regExMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  const $emailErrorMsg = document.querySelector('.emailErrorMsg');
+  const isEmailValid = regExMail.test(emailInput)
 
-  if (emailInput.value.match(emailFormat)) {
-    let isEmailValid = false;
-    $emailErrorMsg.style.display = "block";
-
+  if (isEmailValid) {
+    $emailErrorMsg.classList.add('hidden')
   } else {
-    $emailErrorMsg.style.display = "none";
-    let isEmailValid = true;
+    $emailErrorMsg.classList.remove('hidden')
   }
-  return 
-}
 
-
-function isFormValid() {
-  checkFirstName();
-  checkLastName();
-  checkEmail();
+  return isEmailValid
 }
+  
+
+const isFormValid = () => checkFirstName() && checkLastName() && checkEmail()
 
 
 // Event Listeners

@@ -26,6 +26,10 @@ p {
   padding: 0.5vw;
 }
 
+.hidden {
+  display: none;
+}
+
 img {
   padding-right: 1rem;
 }
