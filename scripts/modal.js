@@ -83,21 +83,20 @@ function checkTournamentCount() {
 }
 
 function checkTournamentCity() {
-  const cityRadios = document.getElementsById('city-radios');
+  const cityRadios = document.querySelectorAll('#city-radios .checkbox-input');
   const $tournamentCityErrorMsg = document.querySelector('.tournamentCityErrorMsg');
   const isTournamentCityIsValid = cityRadios.checked;
 
-  if (isTournamentCityIsValid) {
-    $tournamentCityErrorMsg.classList.add('hidden')
-  } else {
-    $tournamentCityErrorMsg.classList.remove('hidden')
+  for (let i = 0; i < cityRadios.length; i++) {
+    console.log(cityRadios[i])
   }
-  return isTournamentCityIsValid
 }
 
 function checkTerms() {
   //
 }
+
+
 
 
 
