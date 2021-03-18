@@ -2,10 +2,9 @@
 <html lang="FR-fr">
   <head>
     <meta charset="utf-8" />
-    <title>Reservation</title>
+    <title>GameOn - Réservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="css/modal.css" />
-    <link rel="stylesheet" href="css/notification-toast.css"/>
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
@@ -15,7 +14,7 @@
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="public/Logo.png" width="auto" height="auto" />
+      <img alt="logo"  src="public/Logo.png"/>
     </div>
     <div class="main-navbar">
       <a href="#" class="active"><span>Accueil</span></a>
@@ -26,7 +25,6 @@
       <a href="javascript:void(0);" class="icon" onclick="editNav()">
         <i class="fa fa-bars"></i>
       </a>
-    </div>
     </div>
   </div>
     <main>
@@ -108,11 +106,11 @@
               </div>
               <div
                 class="formData">
-                <label label="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
                   <span class="hidden tournamentErrorMsg">Vous devez choisir une option.</span>
               </div>
-              <p class="text-label">Quelles villes ?</p>
+              <label for="city-radios">Quelles villes ?</label>
               <div
                 class="formData" id="city-radios">
                 <input
@@ -210,7 +208,6 @@
                 id="submit-button"
                 class="btn-submit"
                 type="submit"
-                class="button"
                 value="C'est parti"
               />
             </form>
@@ -223,7 +220,9 @@
        <div class="toast" id="clonemother">
         <div class="toast-content">
           <div class="before"></div>
-          <div class="icon">&#x2714</div>
+          <div class="toast-icon">
+          <i class="fa fa-check"></i>
+          </div>
           <div class="text"><p class="toast-text">Félicitations !</p><p class="message">Votre demande d'inscription as bien été prise en compte.</p></div>
           </div>
         </div>
