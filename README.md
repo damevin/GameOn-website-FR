@@ -43,10 +43,9 @@ Publication de l'application en stagging
 ## Outils
 
 Visual Studio Code avec les pluggins : (Prettier, Live Server, Live Sass Compile)
-
+Netlify : Déploiement
 W3C Validator : https://validator.w3.org/
 
 ## License
 MIT
 
-## Validation W3C : (en cours de validation)
