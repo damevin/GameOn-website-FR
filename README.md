@@ -1,6 +1,8 @@
 # GameOn
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0163929b-7e0f-43e9-9b42-7d20a4653640/deploy-status)](https://app.netlify.com/sites/xenodochial-goldwasser-918ab8/deploys)
+<a href="https://consistently.io/g/damevin/RaphaelDamevin_4_31012021/"><img src="https://consistently.io/g/damevin/RaphaelDamevin_4_31012021/badge.svg" alt="Deployment Goals" /></a>
+
 
 GameOn est une PME spécialisée dans les conférences et les concours de jeux-vidéos.
 
