@@ -23,9 +23,18 @@ Raphaël DAMEVIN : intégration web
 Thomas DIMNET : revue de code
 
 ## Changelog
+### V1.2 (Mars21)
+
+Correctifs divers de l'application
+
+### V1.1 (Mars21) :
+
+Mise en production de l'application
+
 ### V1.0 (Fév21) :
 
 Publication de l'application en stagging
+
 ## Outils
 
 Visual Studio Code avec les pluggins : (Prettier, Live Server, Live Sass Compile)
