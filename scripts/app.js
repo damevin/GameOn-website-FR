@@ -59,8 +59,9 @@ function checkEmail() {
 /** Check if the age is filled and return a boolean */
 function checkAge() {
   const ageInput = document.getElementById('birthdate').value;
-  const $ageErrorMsg =  document.querySelector('.ageErrorMsg');
-  const isAgeValid = ageInput.length > 0;
+  const regExAge = /(19\d\d|20[0-3])(-\d\d){2}/;
+  const $ageErrorMsg = document.querySelector('.ageErrorMsg');
+  const isAgeValid = regExAge.test(ageInput);
 
   if (isAgeValid) {
     $ageErrorMsg.classList.add('hidden');
@@ -86,19 +87,20 @@ function checkTournamentCount() {
 
 /** Check if one radio button is checked and return a boolean */
 function checkTournamentCity() {
-  const cityRadios = document.querySelectorAll('#city-radios .checkbox-input');
+  const $cityRadios = document.querySelectorAll('#city-radios .checkbox-input');
   const $tournamentCityErrorMsg = document.querySelector('.tournamentCityErrorMsg');
-  const isTournamentCityNumberIsValid = cityRadios;
+  let isTournamentCityNumberValid = false;
 
-  for (let i = 0; i < cityRadios.length; i++) {
-    if (cityRadios[i].checked) {
+  for (let i = 0; i < $cityRadios.length; i++) {
+    if ($cityRadios[i].checked) {
       $tournamentCityErrorMsg.classList.add('hidden');
+      isTournamentCityNumberValid = true;
       break
     } else {
       $tournamentCityErrorMsg.classList.remove('hidden');
     }
   }
-  return isTournamentCityNumberIsValid
+  return isTournamentCityNumberValid
 }
 
 /** Check if the user has checked the terms and conditions and return a boolean */
