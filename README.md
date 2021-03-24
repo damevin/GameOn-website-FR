@@ -13,7 +13,11 @@ Les utilisateurs peuvent réserver l'accès aux conférences en entrant leurs co
 Ce projet est crée dans le cadre de mon alternance "Développeur Front-End" chez OpenClassRooms.
 
 ### Installation du projet
-Installation du repository git clone https://github.com/damevin/RaphaelDamevin_4_31012021 Ouvrir index.html
+Installation du repository 
+
+``` git clone https://github.com/damevin/RaphaelDamevin_4_31012021 ```
+
+Ouvrir index.html
 
 ## Live demo
 https://gameon.dame.vin/
