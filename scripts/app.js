@@ -17,7 +17,7 @@ function modalDisplay(displayStyle) {
 function checkFirstName() {
   const firstNameInput = document.getElementById('first').value;
   const $firstErrorMsg = document.querySelector(".firstErrorMsg");
-  const isFirstNameValid = firstNameInput.length >= 2;
+  const isFirstNameValid = firstNameInput.trim().length >= 2;
 
   if (isFirstNameValid) {
     $firstErrorMsg.classList.add('hidden');
@@ -31,7 +31,7 @@ function checkFirstName() {
 function checkLastName() {
   const lastNameInput = document.getElementById('last').value;
   const $lastErrorMsg = document.querySelector('.lastErrorMsg');
-  const isLastNameValid = lastNameInput.length >= 2;
+  const isLastNameValid = lastNameInput.trim().length >= 2;
 
   if (isLastNameValid) {
     $lastErrorMsg.classList.add('hidden');
@@ -130,6 +130,8 @@ $registrationForm.addEventListener('submit', function(event) {
     modalDisplay('none');
     // call the notification toast to confirm
     showNotificationToast()
+    // reset the content
+    $registrationForm.reset();
   } 
 })
 
